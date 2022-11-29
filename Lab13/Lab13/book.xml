@@ -1,0 +1,1 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Book><Name>C++</Name><Cost>85</Cost><CountPage>65</CountPage><genre>PROGA</genre></Book><Book><Name>C#</Name><Cost>29</Cost><CountPage>50</CountPage><genre>proga</genre></Book></ArrayOfBook>

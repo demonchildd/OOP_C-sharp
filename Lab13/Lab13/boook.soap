@@ -1,0 +1,18 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/clr/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <SOAP-ENV:Body>
+    <SOAP-ENC:Array id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Lab13/Lab13%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull" SOAP-ENC:arrayType="a1:Book[2]">
+      <item href="#ref-2" />
+      <item href="#ref-3" />
+    </SOAP-ENC:Array>
+    <a1:Book id="ref-2" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Lab13/Lab13%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <PrintedEdition_x002B_name id="ref-4">C++</PrintedEdition_x002B_name>
+      <PrintedEdition_x002B_cost>85</PrintedEdition_x002B_cost>
+      <PrintedEdition_x002B_countPage>65</PrintedEdition_x002B_countPage>
+    </a1:Book>
+    <a1:Book id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Lab13/Lab13%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+      <PrintedEdition_x002B_name id="ref-5">C#</PrintedEdition_x002B_name>
+      <PrintedEdition_x002B_cost>29</PrintedEdition_x002B_cost>
+      <PrintedEdition_x002B_countPage>50</PrintedEdition_x002B_countPage>
+    </a1:Book>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,17 @@
+Протокол
+Выполнено 08.10.2022 09:16:08
+Исключение: Число страниц не может быть меньше нуля
+Метод: Void set_CountPage(Int32)
+Трассировка стека:    at Lab4.PrintedEdition.set_CountPage(Int32 value) in D:\Курс2\ООП\Lab6\Lab6\PrintedEdition.cs:line 42
+   at Lab4.PrintedEdition..ctor(String name, Int32 cost, Int32 countPage) in D:\Курс2\ООП\Lab6\Lab6\PrintedEdition.cs:line 54
+   at Lab4.Book..ctor(String name, Int32 cost, Int32 countPage, String genre) in D:\Курс2\ООП\Lab6\Lab6\Book.cs:line 17
+   at Lab4.mainClass.Main() in D:\Курс2\ООП\Lab6\Lab6\Program.cs:line 98
+______________________________________
+Исключение: Attempted to divide by zero.
+Метод: Void Main()
+Трассировка стека:    at Lab4.mainClass.Main() in D:\Курс2\ООП\Lab6\Lab6\Program.cs:line 112
+______________________________________
+Исключение: Unable to cast object of type 'System.String' to type 'System.Int32'.
+Метод: Byte& Unbox(Void*, System.Object)
+Трассировка стека:    at Lab4.mainClass.Main() in D:\Курс2\ООП\Lab6\Lab6\Program.cs:line 124
+______________________________________

@@ -1,0 +1,60 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab9
+{
+    internal class Computer
+    {
+        string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        string type;
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        int cost;
+        public int Cost
+        {
+            get { return cost; }
+            set { cost = value; }
+        }
+
+        
+
+        public Computer(string name, string type, int cost)
+        {
+            Name = name;
+            Type = type;
+            Cost = cost;
+          
+        }
+        
+
+      
+        public void Power()
+        {
+            if (Cost < 4000)
+            {
+                Console.WriteLine("Компьютер не мощный");
+            }
+            else
+            {
+                Console.WriteLine("Компьютер мощный");
+            }
+        }
+
+        public override string ToString()
+        {
+            return String.Format($"Название: {Name}\tТип процессора: {Type}\tЦена: {Cost}");
+        }
+    }
+}
