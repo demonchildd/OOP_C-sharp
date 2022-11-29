@@ -144,7 +144,7 @@ namespace Lab15
             #endregion
             Ex3.ex3();
             #region 4
-            //
+            //TASK4
             //task4
             Task task3 = new Task(() => Console.WriteLine($"Current Task: {Task.CurrentId}"));
 
