@@ -9,7 +9,7 @@ namespace Lab17_18
     public class Customer
     {
         
-        public List<Hero> services = new List<Hero>();
+        public List<Tour> services = new List<Tour>();
         public Bill bill;
         public string name;
         public int _id;
@@ -20,7 +20,7 @@ namespace Lab17_18
             bill.summa = 0;
             _id = id;
         }
-        public void AddService(Hero service)
+        public void AddService(Tour service)
         {
             services.Add(service);
             bill.summa += service.total;
@@ -33,10 +33,10 @@ namespace Lab17_18
         {
             Console.WriteLine($"Заказчик {name}:");
             if (services != null)
-                foreach (Hero service in services)
+                foreach (Tour service in services)
                 {
                     service.Run();
-                    service.Hit();
+                    service.Info();
                 }
             else
                 Console.WriteLine("Туры не выбраны");

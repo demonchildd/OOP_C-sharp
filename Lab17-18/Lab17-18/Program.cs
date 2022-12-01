@@ -39,20 +39,21 @@ namespace Lab17_18
     {
         public static void Main()
         {
-            Hero qwe = new Hero(new ElfFactory(), 250);
-            Hero asd = new Hero(new VoinFactory(), 500);
+            Tour water = new Tour(new OneFactory(), 250);
+            Tour mount = new Tour(new TwoFactory(), 500);
             TravelAgency travel = new TravelAgency("TravelBy", "Roman");
             Customer customer1 = new Customer(845, "Mars");
             travel.AddCustomer(customer1);
-            customer1.AddService(qwe);
+            customer1.AddService(mount);
             customer1.UseServices();
 
             Customer customer2 = new Customer(456, "Pudge");
             travel.AddCustomer(customer2);
-            customer2.AddService(asd);
+            customer2.AddService(water);
             customer2.UseServices();
 
             travel.GetCustomer();
+            Console.WriteLine("------------------------------------------");
             travel.GetInfo();
             ITravelAgency travelAgency = travel.Clone();
 

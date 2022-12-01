@@ -7,28 +7,26 @@ using System.Threading.Tasks;
 namespace Lab17_18
 {
 
-    public abstract class Weapon
+    public abstract class Type
     {
-        public abstract void Hit();
+        public abstract void Info();
     }
-    // абстрактный класс движение
     public abstract class Movement
     {
         public abstract void Move();
     }
 
-    // класс арбалет
-    public class Arbalet : Weapon
+    public class Mount : Type
     {
-        public override void Hit()
+        public override void Info()
         {
             Console.WriteLine("Спуститься с горы");
         }
     }
     // класс меч
-    public class Sword : Weapon
+    public class Water : Type
     {
-        public override void Hit()
+        public override void Info()
         {
             Console.WriteLine("Погрузиться под воду");
         }
@@ -50,56 +48,58 @@ namespace Lab17_18
         }
     }
     // класс абстрактной фабрики
-    public abstract class HeroFactory
+    public abstract class TourFactory
     {
         public abstract Movement CreateMovement();
-        public abstract Weapon CreateWeapon();
+        public abstract Type CreateType();
     }
     // Фабрика создания летящего героя с арбалетом
-    public class ElfFactory : HeroFactory
+    public class OneFactory : TourFactory
     {
         public override Movement CreateMovement()
         {
             return new FlyMovement();
         }
 
-        public override Weapon CreateWeapon()
+        public override Type CreateType()
         {
-            return new Arbalet();
+            return new Mount();
         }
+       
+        
     }
     // Фабрика создания бегущего героя с мечом
-    public class VoinFactory : HeroFactory
+    public class TwoFactory : TourFactory
     {
         public override Movement CreateMovement()
         {
             return new RunMovement();
         }
 
-        public override Weapon CreateWeapon()
+        public override Type CreateType()
         {
-            return new Sword();
+            return new Water();
         }
     }
     // клиент - сам супергерой
-    public class Hero
+    public class Tour
     {
-        private Weapon weapon;
+        private Type type;
         private Movement movement;
         public int total { get; set; }
-        public Hero(HeroFactory factory, int sum)
+        public Tour(TourFactory factory, int sum)
         {
             total = sum;
-            weapon = factory.CreateWeapon();
+            type = factory.CreateType();
             movement = factory.CreateMovement();
         }
         public void Run()
         {
             movement.Move();
         }
-        public void Hit()
+        public void Info()
         {
-            weapon.Hit();
+            type.Info();
         }
     }
     
