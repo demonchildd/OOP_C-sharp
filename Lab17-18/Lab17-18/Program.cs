@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Lab17_18
 {
@@ -59,6 +60,16 @@ namespace Lab17_18
 
             travelAgency.GetInfo();
             Console.ReadLine();
+            Agent agent = new Agent();
+            
+            CustomBuilder builder = new SeaCustomBuilder();
+           
+            Custom SeaCustom = agent.Create(builder);
+            Console.WriteLine(SeaCustom.ToString());
+          
+            builder = new NatureCustomBuilder();
+            Custom NatureCustom = agent.Create(builder);
+            Console.WriteLine(NatureCustom.ToString());
         }
     }
 }

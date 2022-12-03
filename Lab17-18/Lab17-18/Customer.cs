@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Lab17_18
@@ -40,6 +41,98 @@ namespace Lab17_18
                 }
             else
                 Console.WriteLine("Туры не выбраны");
+        }
+    }
+
+    class Wish
+    {
+        public string wish { get; set; }
+    }
+   
+    class Sea
+    { }
+
+    class Additives
+    {
+        public string type { get; set; }
+    }
+
+    class Custom
+    {
+        
+        public Wish Wish { get; set; }
+      
+        public Sea Sea { get; set; }
+       
+        public Additives Additives { get; set; }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            if (Wish != null)
+                sb.Append(Wish.wish+ "\n");
+            if (Sea != null)
+                sb.Append("Хочу море \n");
+            if (Additives != null)
+                sb.Append(Additives.type + " \n");
+            return sb.ToString();
+        }
+    }
+    abstract class CustomBuilder
+    {
+        public Custom Custom { get; private set; }
+        public void CreateCustom()
+        {
+            Custom = new Custom();
+        }
+        public abstract void SetWish();
+        public abstract void SetSea();
+        public abstract void SetAdditives();
+    }
+    class Agent
+    {
+        public Custom Create(CustomBuilder customBuilder)
+        {
+            customBuilder.CreateCustom();
+            customBuilder.SetWish();
+            customBuilder.SetSea();
+            customBuilder.SetAdditives();
+            return customBuilder.Custom;
+        }
+    }
+    class SeaCustomBuilder : CustomBuilder
+    {
+        public override void SetWish()
+        {
+            this.Custom.Wish = new Wish { wish = "Песчаный пляж" };
+        }
+
+        public override void SetSea()
+        {
+            this.Custom.Sea = new Sea();
+        }
+
+        public override void SetAdditives()
+        {
+            // не используется
+        }
+    }
+   
+    class NatureCustomBuilder : CustomBuilder
+    {
+        public override void SetWish()
+        {
+            this.Custom.Wish = new Wish { wish = "Горный рельеф" };
+        }
+
+        public override void SetSea()
+        {
+            
+        }
+
+        public override void SetAdditives()
+        {
+            this.Custom.Additives = new Additives { type = "Запах леса" };
         }
     }
 }
